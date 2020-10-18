@@ -1,0 +1,15 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+rule_files:
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'flask-prod'
+    scrape_interval: 5s
+    metrics_path: /monitor/prometheus
+    static_configs:
+      - targets: ['flask-prod:5000']
