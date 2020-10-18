@@ -1,11 +1,12 @@
 version: '3'
+
 services:
   gitea:
     image: gitea/gitea:1.12.5
     environment:
       - HOST=gitea
     volumes:
-      - ./.data/gitea/:/data
+      - ./.data/ci/gitea/:/data
     ports:
       - "3000:3000"
       - "22:22"
@@ -20,7 +21,7 @@ services:
       - 80:80
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./.data/drone/:/var/lib/drone
+      - ./.data/ci/drone/:/var/lib/drone
     environment:
       - DRONE_OPEN=true
       - DRONE_SERVER_HOST=drone-server:80
@@ -36,7 +37,7 @@ services:
       - DRONE_DATABASE_DATASOURCE=/var/lib/drone/drone.sqlite
       - DRONE_DATABASE_DRIVER=sqlite3
       - TZ=Asia/Taipei
-      - DRONE_RUNNER_NETWORKS=gogolook-task_ci
+      - DRONE_RUNNER_NETWORKS=gogolook-task_ci,gogolook-task_prod
     restart: always
     networks:
       - ci
@@ -58,6 +59,20 @@ services:
     networks:
       - ci
 
+  proddb:
+    image: postgres:9.6
+    container_name: proddb
+    volumes:
+      - ./.data/prod/db/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=gogolook
+      - POSTGRES_PASSWORD=gogolook
+      - POSTGRES_DB=gogolook
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    restart: always
+    networks:
+      - prod
+
 
 networks:
   ci:
@@ -71,10 +86,10 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.25.10.1/24
+        - subnet: 172.25.11.0/24
   prod:
     driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 172.25.10.2/24
+        - subnet: 172.25.12.0/24
