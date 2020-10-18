@@ -1,0 +1,80 @@
+version: '3'
+services:
+  gitea:
+    image: gitea/gitea:1.12.5
+    environment:
+      - HOST=gitea
+    volumes:
+      - ./.data/gitea/:/data
+    ports:
+      - "3000:3000"
+      - "22:22"
+    restart: always
+    networks:
+      - ci
+
+  drone-server:
+    image: drone/drone:1.2.1
+    container_name: drone-server
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.data/drone/:/var/lib/drone
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_SERVER_HOST=drone-server:80
+      - DRONE_DEBUG=true
+      - DRONE_GIT_ALWAYS_AUTH=false
+      - DRONE_GITEA=true
+      - DRONE_GITEA_SKIP_VERIFY=false
+      - DRONE_GITEA_SERVER=http://gitea:3000
+      - DRONE_PROVIDER=gitea
+      - DRONE_SERVER_PROTO=http
+      - DRONE_RPC_SECRET=some-secret
+      - DRONE_USER_CREATE=username:gogolook,admin:true
+      - DRONE_DATABASE_DATASOURCE=/var/lib/drone/drone.sqlite
+      - DRONE_DATABASE_DRIVER=sqlite3
+      - TZ=Asia/Taipei
+      - DRONE_RUNNER_NETWORKS=gogolook-task_ci
+    restart: always
+    networks:
+      - ci
+
+  drone-agent:
+    image: drone/agent:1.2.1
+    container_name: drone-agent
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_RPC_SERVER=drone-server:9000
+      - DRONE_RPC_SECRET=some-secret
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_DEBUG=true
+      - TZ=Asia/Taipei
+    restart: always
+    networks:
+      - ci
+
+
+networks:
+  ci:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.10.0/24
+  stg:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.10.1/24
+  prod:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.10.2/24
