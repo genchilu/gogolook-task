@@ -1,6 +1,24 @@
 version: '3'
 
 services:
+  # router
+  nginx:
+    image: nginx:1.19.3
+    volumes:
+      - ./nginx/ci/drone:/etc/nginx/conf.d/drone.conf
+      # 改在部署時更新 nginx 設定檔，在 reload
+      # docker cp nginx/prod/flask gogolook-task_nginx_1:/etc/nginx/conf.d/flask.conf
+      # docker exec -ti 9dcc496fe6d5 nginx -s reload 
+      #- ./nginx/prod/flask:/etc/nginx/conf.d/flask.conf
+      - ./nginx/prod/prometheus:/etc/nginx/conf.d/prometheus.conf
+    ports:
+      - "80:80"
+    restart: always
+    networks:
+      - ci
+      - prod
+
+  # CI/CD
   gitea:
     image: gitea/gitea:1.12.5
     environment:
@@ -17,8 +35,6 @@ services:
   drone-server:
     image: drone/drone:1.2.1
     container_name: drone-server
-    ports:
-      - 80:80
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.data/ci/drone/:/var/lib/drone
@@ -59,7 +75,7 @@ services:
     networks:
       - ci
 
-# prod 環境
+  # prod 環境
   proddb:
     image: postgres:9.6
     container_name: proddb
