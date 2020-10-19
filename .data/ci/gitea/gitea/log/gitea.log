@@ -7458,3 +7458,561 @@
 2020/10/19 04:01:52 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080100 1603080110 1] - 134.533µs
 2020/10/19 04:02:02 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080110 1603080120 1] - 145.851µs
 2020/10/19 04:02:12 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080120 1603080130 1] - 257.21µs
+2020/10/19 04:04:25 ...dules/setting/log.go:279:newLogService() [I] Gitea Log Mode: File(File:info)
+2020/10/19 04:04:25 ...les/setting/cache.go:70:newCacheService() [I] Cache Service Enabled
+2020/10/19 04:04:25 ...les/setting/cache.go:81:newCacheService() [I] Last Commit Cache Service Enabled
+2020/10/19 04:04:25 ...s/setting/session.go:63:newSessionService() [I] Session Service Enabled
+2020/10/19 04:04:26 routers/init.go:63:initDBEngine() [I] Beginning ORM engine initialization.
+2020/10/19 04:04:26 routers/init.go:70:initDBEngine() [I] ORM engine initialization attempt #1/10...
+2020/10/19 04:04:26 ...rm/session_schema.go:25:Ping() [I] PING DATABASE sqlite3
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' and name = ? [version] - 446.995µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM version LIMIT 0 [] - 67.951µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM version LIMIT 0 [] - 18.356µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `version` FROM `version` WHERE `id`=? LIMIT 1 [1] - 27.442µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' [] - 375.821µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [user] - 55.21µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [user] - 40.925µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [public_key] - 40.469µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [public_key] - 48.941µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [access_token] - 46.227µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [access_token] - 64.678µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repository] - 153.789µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repository] - 223.087µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [deploy_key] - 41.349µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [deploy_key] - 318.461µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [collaboration] - 75.505µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [collaboration] - 304.079µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [access] - 99.683µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [access] - 167.8µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [upload] - 202.696µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [upload] - 44.907µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [watch] - 592.377µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [watch] - 200.934µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [star] - 153.791µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [star] - 103.649µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [follow] - 295.392µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [follow] - 42.082µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [action] - 58.328µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [action] - 263.597µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue] - 57.758µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue] - 114.455µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [pull_request] - 104.673µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [pull_request] - 141.925µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [comment] - 436.857µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [comment] - 627.083µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [attachment] - 1.337297ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [attachment] - 223.696µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [label] - 94.086µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [label] - 288.319µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_label] - 123.199µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_label] - 210.786µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [milestone] - 66.794µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [milestone] - 166.131µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [mirror] - 161.315µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [mirror] - 212.337µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [release] - 66.63µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [release] - 98.037µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [login_source] - 102.547µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [login_source] - 141.63µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [webhook] - 114.905µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [webhook] - 138.007µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [hook_task] - 97.969µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [hook_task] - 157.184µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team] - 99.142µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team] - 306.732µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [org_user] - 104.933µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [org_user] - 37.004µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_user] - 174.232µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_user] - 197.253µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_repo] - 84.182µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_repo] - 125.847µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [notice] - 83.664µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [notice] - 150.64µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [email_address] - 227.139µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [email_address] - 91.852µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [notification] - 177.408µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [notification] - 43.325µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_user] - 57.832µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_user] - 118.28µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [lfs_meta_object] - 46.907µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [lfs_meta_object] - 81.583µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [two_factor] - 116.415µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [two_factor] - 99.096µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [gpg_key] - 92.411µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [gpg_key] - 65.948µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [gpg_key_import] - 39.079µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [gpg_key_import] - 125.816µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_unit] - 156.75µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_unit] - 93.936µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_redirect] - 66.212µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_redirect] - 334.85µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [external_login_user] - 339.614µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [external_login_user] - 60.481µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [protected_branch] - 66.413µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [protected_branch] - 40.562µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [user_open_id] - 84.709µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [user_open_id] - 39.325µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_watch] - 48.643µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_watch] - 120.584µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [commit_status] - 40.296µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [commit_status] - 40.348µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [stopwatch] - 39.768µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [stopwatch] - 57.812µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [tracked_time] - 60.274µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [tracked_time] - 36.331µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [deleted_branch] - 69.535µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [deleted_branch] - 132.442µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_indexer_status] - 61.47µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_indexer_status] - 41.989µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_dependency] - 48.096µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_dependency] - 53.847µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [lfs_lock] - 83.847µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [lfs_lock] - 55.785µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [reaction] - 47.051µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [reaction] - 38.116µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_assignees] - 64.447µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_assignees] - 48.325µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [u2f_registration] - 40.324µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [u2f_registration] - 40.683µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_unit] - 38.555µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_unit] - 38.357µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [review] - 187.473µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [review] - 36.881µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_application] - 38.029µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_application] - 36.961µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_authorization_code] - 35.695µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_authorization_code] - 35.352µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_grant] - 37.823µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_grant] - 37.18µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [task] - 36.798µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [task] - 39.598µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [language_stat] - 94.189µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [language_stat] - 40.319µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [email_hash] - 36.172µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [email_hash] - 35.944µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [topic] - 36.443µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [topic] - 39.115µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_topic] - 37.429µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_topic] - 39.794µs
+2020/10/19 04:04:26 routers/init.go:133:GlobalInit() [I] ORM engine initialization successful!
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' [] - 31.515µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_session] - 37.019µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_session] - 36.577µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `type`, `name`, `is_actived`, `is_sync_enabled`, `cfg`, `created_unix`, `updated_unix` FROM `login_source` WHERE (is_actived = ? and type = ?) [true 6] - 47.279µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] DELETE FROM `deleted_branch` WHERE (deleted_unix < ?) [1602993866] - 3.875079ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Clean-up deleted branches has finished 1603080266] - 42.266888ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `external_id`, `user_id`, `login_source_id`, `raw_data`, `provider`, `email`, `name`, `first_name`, `last_name`, `nick_name`, `description`, `avatar_url`, `location`, `access_token`, `access_token_secret`, `refresh_token`, `expires_at` FROM `external_login_user` WHERE provider=? ORDER BY login_source_id ASC, external_id ASC LIMIT 100 [github] - 43.529666ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `external_id`, `user_id`, `login_source_id`, `raw_data`, `provider`, `email`, `name`, `first_name`, `last_name`, `nick_name`, `description`, `avatar_url`, `location`, `access_token`, `access_token_secret`, `refresh_token`, `expires_at` FROM `external_login_user` WHERE provider=? ORDER BY login_source_id ASC, external_id ASC LIMIT 100 [gitlab] - 159.244µs
+2020/10/19 04:04:26 ...er/issues/indexer.go:142:func2() [I] PID 16: Initializing Issue Indexer: bleve
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Update migration poster IDs has finished 1603080266] - 29.111262ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE (id > 0) [] - 84.490536ms
+2020/10/19 04:04:26 ...er/issues/indexer.go:221:func3() [I] Issue Indexer Initialization took 33.367261ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_watches!=(SELECT COUNT(*) FROM `watch` WHERE repo_id=repo.id AND mode<>2) [] - 105.570813ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_stars!=(SELECT COUNT(*) FROM `star` WHERE repo_id=repo.id) [] - 55.922µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT label.id FROM `label` WHERE label.num_issues!=(SELECT COUNT(*) FROM `issue_label` WHERE label_id=label.id) [] - 128.318µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `user`.id FROM `user` WHERE `user`.num_repos!=(SELECT COUNT(*) FROM `repository` WHERE owner_id=`user`.id) [] - 118.202µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Delete old repository archives has finished 1603080266] - 38.773555ms
+2020/10/19 04:04:26 ...xer/stats/indexer.go:38:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `issue`.id FROM `issue` WHERE `issue`.num_comments!=(SELECT COUNT(*) FROM `comment` WHERE issue_id=`issue`.id AND type=0) [] - 92.819µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_closed_issues!=(SELECT COUNT(*) FROM `issue` WHERE repo_id=repo.id AND is_closed=? AND is_pull=?) [true false] - 61.682µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_closed_pulls!=(SELECT COUNT(*) FROM `issue` WHERE repo_id=repo.id AND is_closed=? AND is_pull=?) [true true] - 60.824µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_forks!=(SELECT COUNT(*) FROM `repository` WHERE fork_id=repo.id) [] - 63.506µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Check all repository statistics has finished 1603080266] - 38.375582ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `hook_id`, `uuid`, `type`, `url`, `signature`, `payload_content`, `http_method`, `content_type`, `event_type`, `is_ssl`, `is_delivered`, `delivered`, `is_succeed`, `request_content`, `response_content` FROM `hook_task` WHERE (is_delivered=?) [false] - 56.598156ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `repository`  LIMIT 1 [] - 84.352169ms
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT MAX(id) FROM `repository` LIMIT 1 [] - 48.219µs
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `repository`.`id` FROM `repository` LEFT OUTER JOIN `repo_indexer_status` ON repository.id = repo_indexer_status.repo_id AND repo_indexer_status.indexer_type = ? WHERE repo_indexer_status.id IS NULL AND repository.is_empty=? AND repository.id<=? ORDER BY `repository`.`id` DESC LIMIT 50 [1 false 1] - 78.494µs
+2020/10/19 04:04:26 ...xer/stats/indexer.go:84:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+2020/10/19 04:04:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `pull_request`.`id` FROM `pull_request` WHERE (status=?) [1] - 22.430611ms
+2020/10/19 04:04:27 routers/init.go:162:GlobalInit() [I] SQLite3 Supported
+2020/10/19 04:04:27 routers/init.go:50:checkRunMode() [I] Run Mode: Production
+2020/10/19 04:04:27 cmd/web.go:161:runWeb() [I] Listen: http://0.0.0.0:3000
+2020/10/19 04:04:27 cmd/web.go:164:runWeb() [I] LFS server enabled
+2020/10/19 04:04:27 ...s/graceful/server.go:55:NewServer() [I] Starting new server: tcp:0.0.0.0:3000 on PID: 16
+2020/10/19 04:04:28 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 418.541µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 363.032µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 131.48µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [gogolook] - 108.49µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 130.49µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 152.572µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 343.209µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [gogolook] - 119.587µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 167.529µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `secret`, `scratch_salt`, `scratch_hash`, `last_used_passcode`, `created_unix`, `updated_unix` FROM `two_factor` WHERE (uid=?) LIMIT 1 [1] - 70.159µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 220.101µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 260.173µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 182.752µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [gogolook] - 128.064µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 279.734µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 198.989µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 155.026µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [gogolook] - 86.921µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 158.013µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `secret`, `scratch_salt`, `scratch_hash`, `last_used_passcode`, `created_unix`, `updated_unix` FROM `two_factor` WHERE (uid=?) LIMIT 1 [1] - 88.008µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 262.694µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 364.351µs
+2020/10/19 04:04:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 102.516µs
+2020/10/19 04:04:34 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repository.* FROM `repository` INNER JOIN `user` ON `user`.id = repository.owner_id WHERE (repository.lower_name = ?) AND (`user`.lower_name = ?) LIMIT 1 [flask-realworld-example-app gogolook] - 325.792µs
+2020/10/19 04:04:34 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `branch_name`, `can_push`, `enable_whitelist`, `whitelist_user_i_ds`, `whitelist_team_i_ds`, `enable_merge_whitelist`, `whitelist_deploy_keys`, `merge_whitelist_user_i_ds`, `merge_whitelist_team_i_ds`, `enable_status_check`, `status_check_contexts`, `enable_approvals_whitelist`, `approvals_whitelist_user_i_ds`, `approvals_whitelist_team_i_ds`, `required_approvals`, `block_on_rejected_reviews`, `block_on_outdated_branch`, `dismiss_stale_approvals`, `require_signed_commits`, `protected_file_patterns`, `created_unix`, `updated_unix` FROM `protected_branch` WHERE `repo_id`=? AND `branch_name`=? LIMIT 1 [1 master] - 519.868µs
+2020/10/19 04:04:34 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repository.* FROM `repository` INNER JOIN `user` ON `user`.id = repository.owner_id WHERE (repository.lower_name = ?) AND (`user`.lower_name = ?) LIMIT 1 [flask-realworld-example-app gogolook] - 325.173µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `repository` SET `size` = ?, `updated_unix` = ? WHERE `id`=? [106439 1603080275 1] - 26.304144ms
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:36:BeginTx() [I] [SQL] BEGIN TRANSACTION [] - 5.719452ms
+2020/10/19 04:04:35 ...o/xorm/session_tx.go:75:Commit() [I] [SQL] COMMIT [] - 31.819µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 238.938µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 76.375µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 214.244µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `email`, `is_activated` FROM `email_address` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 45.885µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 130.633µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `email`, `is_activated` FROM `email_address` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 130.301µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 231.169µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 140.577µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `release` WHERE repo_id=? AND is_draft=? [1 false] - 51.243µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `org_id`, `is_system_webhook`, `url`, `signature`, `http_method`, `content_type`, `secret`, `events`, `is_ssl`, `is_active`, `hook_task_type`, `meta`, `last_status`, `created_unix`, `updated_unix` FROM `webhook` WHERE (is_active=?) AND `repo_id`=? [true 1] - 117.351µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `org_id`, `is_system_webhook`, `url`, `signature`, `http_method`, `content_type`, `secret`, `events`, `is_ssl`, `is_active`, `hook_task_type`, `meta`, `last_status`, `created_unix`, `updated_unix` FROM `webhook` WHERE (repo_id=? AND org_id=? AND is_system_webhook=?) [0 0 true] - 89.449µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `id`=? LIMIT 1 [1] - 26.597372ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `hook_task` (`repo_id`,`hook_id`,`uuid`,`type`,`url`,`signature`,`payload_content`,`http_method`,`content_type`,`event_type`,`is_ssl`,`is_delivered`,`delivered`,`is_succeed`,`request_content`,`response_content`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [1 1 b545da6c-9755-4221-8f6c-c6b877cc9069 3 http://drone-server:80/hook?secret=kVvAd5TPjUnTKCpJK7DzhA3j5LJVzGwn 0f729c6e00e5d58203def8ff91f4293dd672293485dc754e146bd56b3b95f926 {
+	  "secret": "kVvAd5TPjUnTKCpJK7DzhA3j5LJVzGwn",
+	  "ref": "refs/heads/master",
+	  "before": "eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1",
+	  "after": "71c42a9dbed15e8422637ed228c69be72fafb976",
+	  "compare_url": "http://gitea:3000/gogolook/flask-realworld-example-app/compare/eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1...71c42a9dbed15e8422637ed228c69be72fafb976",
+	  "commits": [
+	    {
+	      "id": "71c42a9dbed15e8422637ed228c69be72fafb976",
+	      "message": "Add migrate to makefile\n",
+	      "url": "http://gitea:3000/gogolook/flask-realworld-example-app/commit/71c42a9dbed15e8422637ed228c69be72fafb976",
+	      "author": {
+	        "name": "GenchiLu",
+	        "email": "genchilu@gmail.com",
+	        "username": ""
+	      },
+	      "committer": {
+	        "name": "GenchiLu",
+	        "email": "genchilu@gmail.com",
+	        "username": ""
+	      },
+	      "verification": null,
+	      "timestamp": "2020-10-19T11:59:30+08:00",
+	      "added": [],
+	      "removed": [],
+	      "modified": [
+	        "Makefile"
+	      ]
+	    }
+	  ],
+	  "head_commit": null,
+	  "repository": {
+	    "id": 1,
+	    "owner": {
+	      "id": 1,
+	      "login": "gogolook",
+	      "full_name": "",
+	      "email": "gogolook@gogolook.com",
+	      "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	      "language": "en-US",
+	      "is_admin": true,
+	      "last_login": "2020-10-19T02:29:04Z",
+	      "created": "2020-10-19T01:58:49Z",
+	      "username": "gogolook"
+	    },
+	    "name": "flask-realworld-example-app",
+	    "full_name": "gogolook/flask-realworld-example-app",
+	    "description": "",
+	    "empty": false,
+	    "private": false,
+	    "fork": false,
+	    "template": false,
+	    "parent": null,
+	    "mirror": false,
+	    "size": 103,
+	    "html_url": "http://gitea:3000/gogolook/flask-realworld-example-app",
+	    "ssh_url": "git@gitea:gogolook/flask-realworld-example-app.git",
+	    "clone_url": "http://gitea:3000/gogolook/flask-realworld-example-app.git",
+	    "original_url": "",
+	    "website": "",
+	    "stars_count": 0,
+	    "forks_count": 0,
+	    "watchers_count": 1,
+	    "open_issues_count": 0,
+	    "open_pr_counter": 0,
+	    "release_counter": 7,
+	    "default_branch": "master",
+	    "archived": false,
+	    "created_at": "2020-10-19T01:59:07Z",
+	    "updated_at": "2020-10-19T04:04:35Z",
+	    "permissions": {
+	      "admin": true,
+	      "push": true,
+	      "pull": true
+	    },
+	    "has_issues": true,
+	    "internal_tracker": {
+	      "enable_time_tracker": true,
+	      "allow_only_contributors_to_track_time": true,
+	      "enable_issue_dependencies": true
+	    },
+	    "has_wiki": true,
+	    "has_pull_requests": true,
+	    "ignore_whitespace_conflicts": false,
+	    "allow_merge_commits": true,
+	    "allow_rebase": true,
+	    "allow_rebase_explicit": true,
+	    "allow_squash_merge": true,
+	    "avatar_url": ""
+	  },
+	  "pusher": {
+	    "id": 1,
+	    "login": "gogolook",
+	    "full_name": "",
+	    "email": "gogolook@gogolook.com",
+	    "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	    "language": "en-US",
+	    "is_admin": true,
+	    "last_login": "2020-10-19T02:29:04Z",
+	    "created": "2020-10-19T01:58:49Z",
+	    "username": "gogolook"
+	  },
+	  "sender": {
+	    "id": 1,
+	    "login": "gogolook",
+	    "full_name": "",
+	    "email": "gogolook@gogolook.com",
+	    "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	    "language": "en-US",
+	    "is_admin": true,
+	    "last_login": "2020-10-19T02:29:04Z",
+	    "created": "2020-10-19T01:58:49Z",
+	    "username": "gogolook"
+	  }
+	} POST 1 push false false 0 false  ] - 27.364884ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `commit_sha`, `indexer_type` FROM `repo_indexer_status` WHERE (`indexer_type` = ?) AND `repo_id`=? LIMIT 1 [1 1] - 102.166µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `hook_id`, `uuid`, `type`, `url`, `signature`, `payload_content`, `http_method`, `content_type`, `event_type`, `is_ssl`, `is_delivered`, `delivered`, `is_succeed`, `request_content`, `response_content` FROM `hook_task` WHERE (repo_id=? AND is_delivered=?) [1 false] - 4.812973ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE repository SET updated_unix = ? WHERE id = ? [1603080275 1] - 39.170144ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `watch` INNER JOIN `user` ON `user`.id = `watch`.user_id WHERE (`watch`.repo_id=?) AND (`watch`.mode<>?) AND (`user`.is_active=?) AND (`user`.prohibit_login=?) [1 2 true false] - 215.588µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [c721280b] - 5.914309ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `action` (`user_id`,`op_type`,`act_user_id`,`repo_id`,`comment_id`,`is_deleted`,`ref_name`,`is_private`,`content`,`created_unix`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [1 5 1 1 0 false master false {"Len":1,"Commits":[{"Sha1":"71c42a9dbed15e8422637ed228c69be72fafb976","Message":"Add migrate to makefile\n","AuthorEmail":"genchilu@gmail.com","AuthorName":"GenchiLu","CommitterEmail":"genchilu@gmail.com","CommitterName":"GenchiLu","Timestamp":"2020-10-19T11:59:30+08:00"}],"CompareURL":"gogolook/flask-realworld-example-app/compare/eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1...71c42a9dbed15e8422637ed228c69be72fafb976"} 1603080275] - 98.047141ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 12.776866ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 62.509µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 160.641µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] DELETE FROM `deleted_branch` WHERE (repo_id=? AND name=?) [1 master] - 4.100509ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repository.* FROM `repository` INNER JOIN `user` ON `user`.id = repository.owner_id WHERE (repository.lower_name = ?) AND (`user`.lower_name = ?) LIMIT 1 [flask-realworld-example-app gogolook] - 130.405µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 51.574µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `pull_request` INNER JOIN `issue` ON issue.id = pull_request.issue_id WHERE (head_repo_id = ? AND head_branch = ? AND has_merged = ? AND issue.is_closed = ?) [1 master false false] - 5.713283ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `id`=? LIMIT 1 [1] - 82.69µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `pull_request` INNER JOIN `issue` ON issue.id=pull_request.issue_id WHERE (base_repo_id=? AND base_branch=? AND has_merged=? AND issue.is_closed=?) [1 master false false] - 1.69217ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `access_token` SET `uid` = ?, `name` = ?, `token_hash` = ?, `token_salt` = ?, `token_last_eight` = ?, `updated_unix` = ? WHERE `id`=? [1 drone 103368376a733e9f123587c7b3d61d8da26cbd519787de2391c32fc16e5178894917c2165b4100809a3f66516217287c0418 LUqww8Te5I c721280b 1603080275 1] - 94.748414ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 156.408µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 217.225µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 118.372µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 34.094µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:36:BeginTx() [I] [SQL] BEGIN TRANSACTION [] - 22.555762ms
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:157:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `commit_id`, `is_primary`, `language`, `size`, `created_unix` FROM `language_stat` WHERE (`repo_id` = ?) ORDER BY `size` DESC [1] - 303.361µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] UPDATE `language_stat` SET `commit_id` = ?, `is_primary` = ?, `size` = ? WHERE `id`=? [71c42a9dbed15e8422637ed228c69be72fafb976 false 555 1] - 9.411584ms
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] UPDATE `language_stat` SET `commit_id` = ?, `is_primary` = ?, `size` = ? WHERE `id`=? [71c42a9dbed15e8422637ed228c69be72fafb976 false 2362 2] - 227.844µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] UPDATE `language_stat` SET `commit_id` = ?, `is_primary` = ?, `size` = ? WHERE `id`=? [71c42a9dbed15e8422637ed228c69be72fafb976 true 50633 3] - 36.726µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] UPDATE `repo_indexer_status` SET `commit_sha` = ? WHERE `id`=? [71c42a9dbed15e8422637ed228c69be72fafb976 1] - 3.364628ms
+2020/10/19 04:04:35 ...o/xorm/session_tx.go:75:Commit() [I] [SQL] COMMIT [] - 20.544421ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [c721280b] - 218.632µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `access_token` SET `uid` = ?, `name` = ?, `token_hash` = ?, `token_salt` = ?, `token_last_eight` = ?, `updated_unix` = ? WHERE `id`=? [1 drone 103368376a733e9f123587c7b3d61d8da26cbd519787de2391c32fc16e5178894917c2165b4100809a3f66516217287c0418 LUqww8Te5I c721280b 1603080275 1] - 29.002671ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 201.233µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 172.244µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 97.525µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 240.5µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:36:BeginTx() [I] [SQL] BEGIN TRANSACTION [] - 2.727829ms
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:157:QueryContext() [I] [SQL] SELECT `id`, `index`, `repo_id`, `state`, `sha`, `target_url`, `description`, `context_hash`, `context`, `creator_id`, `created_unix`, `updated_unix` FROM `commit_status` WHERE `repo_id`=? AND `sha`=? ORDER BY `index` DESC LIMIT 1 [1 71c42a9dbed15e8422637ed228c69be72fafb976] - 140.173µs
+2020/10/19 04:04:35 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] INSERT INTO `commit_status` (`index`,`repo_id`,`state`,`sha`,`target_url`,`description`,`context_hash`,`context`,`creator_id`,`created_unix`,`updated_unix`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [1 1 pending 71c42a9dbed15e8422637ed228c69be72fafb976 http://drone-server:80/gogolook/flask-realworld-example-app/15 Build is pending 9b1beca72b98a60e7f72a69d7f2aeb14a2b89e93 continuous-integration/drone/push 1 1603080275 1603080275] - 32.005532ms
+2020/10/19 04:04:35 ...o/xorm/session_tx.go:75:Commit() [I] [SQL] COMMIT [] - 15.071446ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `id`=? LIMIT 1 [1] - 98.672µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 259.634µs
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `hook_task` SET `repo_id` = ?, `hook_id` = ?, `uuid` = ?, `type` = ?, `url` = ?, `signature` = ?, `payload_content` = ?, `http_method` = ?, `content_type` = ?, `event_type` = ?, `is_ssl` = ?, `is_delivered` = ?, `delivered` = ?, `is_succeed` = ?, `request_content` = ?, `response_content` = ? WHERE `id`=? [1 1 b545da6c-9755-4221-8f6c-c6b877cc9069 3 http://drone-server:80/hook?secret=kVvAd5TPjUnTKCpJK7DzhA3j5LJVzGwn 0f729c6e00e5d58203def8ff91f4293dd672293485dc754e146bd56b3b95f926 {
+	  "secret": "kVvAd5TPjUnTKCpJK7DzhA3j5LJVzGwn",
+	  "ref": "refs/heads/master",
+	  "before": "eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1",
+	  "after": "71c42a9dbed15e8422637ed228c69be72fafb976",
+	  "compare_url": "http://gitea:3000/gogolook/flask-realworld-example-app/compare/eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1...71c42a9dbed15e8422637ed228c69be72fafb976",
+	  "commits": [
+	    {
+	      "id": "71c42a9dbed15e8422637ed228c69be72fafb976",
+	      "message": "Add migrate to makefile\n",
+	      "url": "http://gitea:3000/gogolook/flask-realworld-example-app/commit/71c42a9dbed15e8422637ed228c69be72fafb976",
+	      "author": {
+	        "name": "GenchiLu",
+	        "email": "genchilu@gmail.com",
+	        "username": ""
+	      },
+	      "committer": {
+	        "name": "GenchiLu",
+	        "email": "genchilu@gmail.com",
+	        "username": ""
+	      },
+	      "verification": null,
+	      "timestamp": "2020-10-19T11:59:30+08:00",
+	      "added": [],
+	      "removed": [],
+	      "modified": [
+	        "Makefile"
+	      ]
+	    }
+	  ],
+	  "head_commit": null,
+	  "repository": {
+	    "id": 1,
+	    "owner": {
+	      "id": 1,
+	      "login": "gogolook",
+	      "full_name": "",
+	      "email": "gogolook@gogolook.com",
+	      "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	      "language": "en-US",
+	      "is_admin": true,
+	      "last_login": "2020-10-19T02:29:04Z",
+	      "created": "2020-10-19T01:58:49Z",
+	      "username": "gogolook"
+	    },
+	    "name": "flask-realworld-example-app",
+	    "full_name": "gogolook/flask-realworld-example-app",
+	    "description": "",
+	    "empty": false,
+	    "private": false,
+	    "fork": false,
+	    "template": false,
+	    "parent": null,
+	    "mirror": false,
+	    "size": 103,
+	    "html_url": "http://gitea:3000/gogolook/flask-realworld-example-app",
+	    "ssh_url": "git@gitea:gogolook/flask-realworld-example-app.git",
+	    "clone_url": "http://gitea:3000/gogolook/flask-realworld-example-app.git",
+	    "original_url": "",
+	    "website": "",
+	    "stars_count": 0,
+	    "forks_count": 0,
+	    "watchers_count": 1,
+	    "open_issues_count": 0,
+	    "open_pr_counter": 0,
+	    "release_counter": 7,
+	    "default_branch": "master",
+	    "archived": false,
+	    "created_at": "2020-10-19T01:59:07Z",
+	    "updated_at": "2020-10-19T04:04:35Z",
+	    "permissions": {
+	      "admin": true,
+	      "push": true,
+	      "pull": true
+	    },
+	    "has_issues": true,
+	    "internal_tracker": {
+	      "enable_time_tracker": true,
+	      "allow_only_contributors_to_track_time": true,
+	      "enable_issue_dependencies": true
+	    },
+	    "has_wiki": true,
+	    "has_pull_requests": true,
+	    "ignore_whitespace_conflicts": false,
+	    "allow_merge_commits": true,
+	    "allow_rebase": true,
+	    "allow_rebase_explicit": true,
+	    "allow_squash_merge": true,
+	    "avatar_url": ""
+	  },
+	  "pusher": {
+	    "id": 1,
+	    "login": "gogolook",
+	    "full_name": "",
+	    "email": "gogolook@gogolook.com",
+	    "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	    "language": "en-US",
+	    "is_admin": true,
+	    "last_login": "2020-10-19T02:29:04Z",
+	    "created": "2020-10-19T01:58:49Z",
+	    "username": "gogolook"
+	  },
+	  "sender": {
+	    "id": 1,
+	    "login": "gogolook",
+	    "full_name": "",
+	    "email": "gogolook@gogolook.com",
+	    "avatar_url": "http://gitea:3000/user/avatar/gogolook/-1",
+	    "language": "en-US",
+	    "is_admin": true,
+	    "last_login": "2020-10-19T02:29:04Z",
+	    "created": "2020-10-19T01:58:49Z",
+	    "username": "gogolook"
+	  }
+	} POST 1 push false true 1603080275936189375 true {"headers":{"Content-Type":"application/json","X-GitHub-Delivery":"b545da6c-9755-4221-8f6c-c6b877cc9069","X-GitHub-Event":"push","X-Gitea-Delivery":"b545da6c-9755-4221-8f6c-c6b877cc9069","X-Gitea-Event":"push","X-Gitea-Signature":"0f729c6e00e5d58203def8ff91f4293dd672293485dc754e146bd56b3b95f926","X-Gogs-Delivery":"b545da6c-9755-4221-8f6c-c6b877cc9069","X-Gogs-Event":"push","X-Gogs-Signature":"0f729c6e00e5d58203def8ff91f4293dd672293485dc754e146bd56b3b95f926"}} {"status":200,"headers":{"Cache-Control":"no-cache, no-store, must-revalidate, private, max-age=0","Content-Length":"686","Content-Type":"application/json","Date":"Mon, 19 Oct 2020 04:04:35 GMT","Expires":"Thu, 01 Jan 1970 00:00:00 UTC","Pragma":"no-cache","X-Accel-Expires":"0","X-Frame-Options":"DENY","X-Xss-Protection":"1; mode=block"},"body":"{\"id\":15,\"repo_id\":1,\"trigger\":\"@hook\",\"number\":15,\"status\":\"pending\",\"event\":\"push\",\"action\":\"\",\"link\":\"http://gitea:3000/gogolook/flask-realworld-example-app/compare/eb9759bc5139cbd9d1eb53a1bad7d3abe927fbe1...71c42a9dbed15e8422637ed228c69be72fafb976\",\"timestamp\":0,\"message\":\"Add migrate to makefile\\n\",\"before\":\"\",\"after\":\"71c42a9dbed15e8422637ed228c69be72fafb976\",\"ref\":\"refs/heads/master\",\"source_repo\":\"\",\"source\":\"master\",\"target\":\"master\",\"author_login\":\"\",\"author_name\":\"GenchiLu\",\"author_email\":\"genchilu@gmail.com\",\"author_avatar\":\"http://gitea:3000/user/avatar/gogolook/-1\",\"sender\":\"gogolook\",\"started\":0,\"finished\":0,\"created\":1603080275,\"updated\":1603080275,\"version\":1}\n"} 14] - 39.062532ms
+2020/10/19 04:04:35 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `org_id`, `is_system_webhook`, `url`, `signature`, `http_method`, `content_type`, `secret`, `events`, `is_ssl`, `is_active`, `hook_task_type`, `meta`, `last_status`, `created_unix`, `updated_unix` FROM `webhook` WHERE `id`=? LIMIT 1 [1] - 164.615µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `webhook` SET `last_status` = ?, `updated_unix` = ? WHERE `id`=? [1 1603080275 1] - 38.712257ms
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `name`, `token_hash`, `token_salt`, `token_last_eight`, `created_unix`, `updated_unix` FROM `access_token` WHERE (token_last_eight = ?) [c721280b] - 96.532µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] UPDATE `access_token` SET `uid` = ?, `name` = ?, `token_hash` = ?, `token_salt` = ?, `token_last_eight` = ?, `updated_unix` = ? WHERE `id`=? [1 drone 103368376a733e9f123587c7b3d61d8da26cbd519787de2391c32fc16e5178894917c2165b4100809a3f66516217287c0418 LUqww8Te5I c721280b 1603080276 1] - 20.249519ms
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 393.229µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 234.873µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 196.416µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 330.751µs
+2020/10/19 04:04:36 ...m.io/xorm/core/tx.go:36:BeginTx() [I] [SQL] BEGIN TRANSACTION [] - 2.286918ms
+2020/10/19 04:04:36 ...m.io/xorm/core/tx.go:157:QueryContext() [I] [SQL] SELECT `id`, `index`, `repo_id`, `state`, `sha`, `target_url`, `description`, `context_hash`, `context`, `creator_id`, `created_unix`, `updated_unix` FROM `commit_status` WHERE `repo_id`=? AND `sha`=? ORDER BY `index` DESC LIMIT 1 [1 71c42a9dbed15e8422637ed228c69be72fafb976] - 232.986µs
+2020/10/19 04:04:36 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] INSERT INTO `commit_status` (`index`,`repo_id`,`state`,`sha`,`target_url`,`description`,`context_hash`,`context`,`creator_id`,`created_unix`,`updated_unix`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [2 1 pending 71c42a9dbed15e8422637ed228c69be72fafb976 http://drone-server:80/gogolook/flask-realworld-example-app/15 Build is running 9b1beca72b98a60e7f72a69d7f2aeb14a2b89e93 continuous-integration/drone/push 1 1603080276 1603080276] - 26.029247ms
+2020/10/19 04:04:36 ...o/xorm/session_tx.go:75:Commit() [I] [SQL] COMMIT [] - 19.629461ms
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `id`=? LIMIT 1 [1] - 248.775µs
+2020/10/19 04:04:36 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 117.461µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080265 1603080275 1] - 177.121µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 414.614µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 127.979µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 261.063µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 245.839µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 109.453µs
+2020/10/19 04:04:37 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 148.042µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 357.798µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 153.109µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 113.229µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 61.381µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `release` WHERE repo_id=? AND is_draft=? [1 false] - 107.884µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `user` INNER JOIN `team_user` ON `team_user`.org_id=`user`.id INNER JOIN `team` ON `team`.id=`team_user`.team_id WHERE (`team_user`.uid=?) AND (`team`.authorize=?) ORDER BY `user`.`name` ASC [1 owner] - 211.91µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `user_id`, `repo_id`, `mode` FROM `watch` WHERE `user_id`=? AND `repo_id`=? LIMIT 1 [1 1] - 81.227µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `repo_id` FROM `star` WHERE `uid`=? AND `repo_id`=? LIMIT 1 [1 1] - 102.931µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `publisher_id`, `tag_name`, `original_author`, `original_author_id`, `lower_tag_name`, `target`, `title`, `sha1`, `num_commits`, `note`, `is_draft`, `is_prerelease`, `is_tag`, `created_unix` FROM `release` WHERE repo_id=? ORDER BY `created_unix` DESC, `id` DESC LIMIT 30 [1] - 161.17µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `release` WHERE repo_id=? [1] - 82.873µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uuid`, `issue_id`, `release_id`, `uploader_id`, `comment_id`, `name`, `download_count`, `size`, `created_unix` FROM `attachment` WHERE `release_id` IN (?,?,?,?,?,?,?) ORDER BY `release_id` ASC [1 2 3 4 5 6 7] - 65.847µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `notification` WHERE (user_id = ?) AND (status = ?) [1 1] - 94.061µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 223.081µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 205.169µs
+2020/10/19 04:04:38 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 281.154µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 153.627µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 130.741µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 118.432µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 130.246µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `release` WHERE repo_id=? AND is_draft=? [1 false] - 287.904µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `user` INNER JOIN `team_user` ON `team_user`.org_id=`user`.id INNER JOIN `team` ON `team`.id=`team_user`.team_id WHERE (`team_user`.uid=?) AND (`team`.authorize=?) ORDER BY `user`.`name` ASC [1 owner] - 323.736µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `user_id`, `repo_id`, `mode` FROM `watch` WHERE `user_id`=? AND `repo_id`=? LIMIT 1 [1 1] - 99.109µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `repo_id` FROM `star` WHERE `uid`=? AND `repo_id`=? LIMIT 1 [1 1] - 88.012µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT topic.* FROM `topic` INNER JOIN `repo_topic` ON repo_topic.topic_id = topic.id WHERE repo_topic.repo_id=? ORDER BY `topic`.`repo_count` DESC [1] - 114.792µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `commit_id`, `is_primary`, `language`, `size`, `created_unix` FROM `language_stat` WHERE (`repo_id` = ?) ORDER BY `size` DESC [1] - 104.096µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 188.484µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `email`, `is_activated` FROM `email_address` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 133.99µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 152.626µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `email`, `is_activated` FROM `email_address` WHERE `email`=? LIMIT 1 [genchilu@gmail.com] - 403.414µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT max( id ) as id FROM `commit_status` WHERE (repo_id = ?) AND (sha = ?) GROUP BY context_hash ORDER BY max( id ) desc LIMIT 10 [1 71c42a9dbed15e8422637ed228c69be72fafb976] - 171.842µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `index`, `repo_id`, `state`, `sha`, `target_url`, `description`, `context_hash`, `context`, `creator_id`, `created_unix`, `updated_unix` FROM `commit_status` WHERE `id` IN (?) [44] - 120.214µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `notification` WHERE (user_id = ?) AND (status = ?) [1 1] - 72.028µs
+2020/10/19 04:04:39 ...m.io/xorm/core/tx.go:36:BeginTx() [I] [SQL] BEGIN TRANSACTION [] - 2.500608ms
+2020/10/19 04:04:39 ...m.io/xorm/core/tx.go:130:ExecContext() [I] [SQL] INSERT INTO `email_hash` (`hash`,`email`) VALUES (?, ?) [27c1b2e3355f806924ba56f7d23ab294 genchilu@gmail.com] - 2.693147ms
+2020/10/19 04:04:39 ...o/xorm/session_tx.go:75:Commit() [I] [SQL] COMMIT [] - 227.727µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 159.676µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 2.173354ms
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 172.416µs
+2020/10/19 04:04:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 1.917642ms
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 371.577µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE `owner_id`=? AND `lower_name`=? LIMIT 1 [1 flask-realworld-example-app] - 318.678µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `user_id`, `mode` FROM `collaboration` WHERE `repo_id`=? AND `user_id`=? LIMIT 1 [1 1] - 123.912µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `type`, `config`, `created_unix` FROM `repo_unit` WHERE (repo_id = ?) [1] - 466.087µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `release` WHERE repo_id=? AND is_draft=? [1 false] - 636.809µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `user` INNER JOIN `team_user` ON `team_user`.org_id=`user`.id INNER JOIN `team` ON `team`.id=`team_user`.team_id WHERE (`team_user`.uid=?) AND (`team`.authorize=?) ORDER BY `user`.`name` ASC [1 owner] - 1.058917ms
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `user_id`, `repo_id`, `mode` FROM `watch` WHERE `user_id`=? AND `repo_id`=? LIMIT 1 [1 1] - 308.385µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `uid`, `repo_id` FROM `star` WHERE `uid`=? AND `repo_id`=? LIMIT 1 [1 1] - 863.763µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT topic.* FROM `topic` INNER JOIN `repo_topic` ON repo_topic.topic_id = topic.id WHERE repo_topic.repo_id=? ORDER BY `topic`.`repo_count` DESC [1] - 117.983µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `commit_id`, `is_primary`, `language`, `size`, `created_unix` FROM `language_stat` WHERE (`repo_id` = ?) ORDER BY `size` DESC [1] - 172.516µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `owner_id`, `path`, `created` FROM `lfs_lock` WHERE `repo_id`=? [1] - 176.245µs
+2020/10/19 04:04:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT count(*) FROM `notification` WHERE (user_id = ?) AND (status = ?) [1 1] - 90.465µs
+2020/10/19 04:04:44 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 153.182µs
+2020/10/19 04:04:44 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `lower_name`=? LIMIT 1 [gogolook] - 1.401617ms
+2020/10/19 04:04:44 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 271.124µs
+2020/10/19 04:04:47 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080275 1603080285 1] - 143.866µs
+2020/10/19 04:04:57 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603080285 1603080295 1] - 232.221µs
