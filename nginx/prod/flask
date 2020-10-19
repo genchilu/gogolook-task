@@ -1,5 +1,6 @@
 upstream backend {
-    server prometheus-prod:9090;
+    server 172.25.12.10:5000;
+    server 172.25.13.10:5000;
 }
 
 server {
@@ -16,8 +17,7 @@ server {
                 add_header Content-Security-Policy "script-src 'self'; object-src 'self'";
                 add_header Referrer-Policy "origin-when-cross-origin";
 
-                set $target http://backend;
-                proxy_pass $target;
+                proxy_pass http://backend;
         }
 
 }

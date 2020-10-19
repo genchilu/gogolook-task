@@ -9,7 +9,7 @@ services:
       # 改在部署時更新 nginx 設定檔，在 reload
       # docker cp nginx/prod/flask gogolook-task_nginx_1:/etc/nginx/conf.d/flask.conf
       # docker exec -ti 9dcc496fe6d5 nginx -s reload 
-      #- ./nginx/prod/flask:/etc/nginx/conf.d/flask.conf
+      - ./nginx/prod/flask:/etc/nginx/conf.d/flask.conf
       - ./nginx/prod/prometheus:/etc/nginx/conf.d/prometheus.conf
     ports:
       - "80:80"
