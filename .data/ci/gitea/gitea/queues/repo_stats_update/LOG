@@ -95,3 +95,12 @@
 03:41:49.440074 version@stat F·[1] S·127B[127B] Sc·[0.25]
 03:41:49.472516 db@janitor F·3 G·0
 03:41:49.473289 db@open done T·52.147893ms
+=============== Oct 19, 2020 (UTC) ===============
+03:46:23.415853 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+03:46:23.428506 version@stat F·[1] S·127B[127B] Sc·[0.25]
+03:46:23.430520 db@open opening
+03:46:23.431848 journal@recovery F·1
+03:46:23.433056 journal@recovery recovering @21
+03:46:23.442103 version@stat F·[1] S·127B[127B] Sc·[0.25]
+03:46:23.478438 db@janitor F·3 G·0
+03:46:23.479859 db@open done T·48.351568ms

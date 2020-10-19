@@ -5949,3 +5949,179 @@
 2020/10/19 03:43:19 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603078987 1603078997 1] - 183.057µs
 2020/10/19 03:43:29 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603078997 1603079007 1] - 405.355µs
 2020/10/19 03:43:39 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603079007 1603079017 1] - 250.223µs
+2020/10/19 03:46:22 ...dules/setting/log.go:279:newLogService() [I] Gitea Log Mode: File(File:info)
+2020/10/19 03:46:22 ...les/setting/cache.go:70:newCacheService() [I] Cache Service Enabled
+2020/10/19 03:46:22 ...les/setting/cache.go:81:newCacheService() [I] Last Commit Cache Service Enabled
+2020/10/19 03:46:22 ...s/setting/session.go:63:newSessionService() [I] Session Service Enabled
+2020/10/19 03:46:22 routers/init.go:63:initDBEngine() [I] Beginning ORM engine initialization.
+2020/10/19 03:46:22 routers/init.go:70:initDBEngine() [I] ORM engine initialization attempt #1/10...
+2020/10/19 03:46:22 ...rm/session_schema.go:25:Ping() [I] PING DATABASE sqlite3
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' and name = ? [version] - 175.075µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM version LIMIT 0 [] - 47.75µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM version LIMIT 0 [] - 32.269µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `version` FROM `version` WHERE `id`=? LIMIT 1 [1] - 19.914µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' [] - 61.125µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [user] - 114.16µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [user] - 62.927µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [public_key] - 97.266µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [public_key] - 88.295µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [access_token] - 160.261µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [access_token] - 42.766µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repository] - 70.087µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repository] - 53.509µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [deploy_key] - 86.219µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [deploy_key] - 129.354µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [collaboration] - 92.643µs
+2020/10/19 03:46:22 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [collaboration] - 71.842µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [access] - 73.836µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [access] - 57.252µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [upload] - 107.89µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [upload] - 106.937µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [watch] - 80.386µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [watch] - 71.243µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [star] - 70.841µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [star] - 90.303µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [follow] - 40.826µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [follow] - 61.081µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [action] - 45.767µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [action] - 112.255µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue] - 116.093µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue] - 43.095µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [pull_request] - 66.842µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [pull_request] - 105.343µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [comment] - 106.855µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [comment] - 186.91µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [attachment] - 68.162µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [attachment] - 76.058µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [label] - 65.369µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [label] - 48.241µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_label] - 79.624µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_label] - 82.881µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [milestone] - 68.926µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [milestone] - 141.124µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [mirror] - 109.002µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [mirror] - 166.528µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [release] - 119.609µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [release] - 254.501µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [login_source] - 148.417µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [login_source] - 116.185µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [webhook] - 126.39µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [webhook] - 106.054µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [hook_task] - 151.206µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [hook_task] - 102.964µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team] - 177.693µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team] - 252.625µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [org_user] - 116.651µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [org_user] - 118.251µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_user] - 197.625µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_user] - 105.966µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_repo] - 43.684µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_repo] - 80.476µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [notice] - 171.326µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [notice] - 154.562µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [email_address] - 128.795µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [email_address] - 373.204µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [notification] - 80.136µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [notification] - 174.185µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_user] - 155.723µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_user] - 248.805µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [lfs_meta_object] - 193.682µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [lfs_meta_object] - 57.063µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [two_factor] - 234.433µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [two_factor] - 121.999µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [gpg_key] - 60.884µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [gpg_key] - 97.724µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [gpg_key_import] - 280.959µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [gpg_key_import] - 149.872µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_unit] - 121.071µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_unit] - 43.763µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_redirect] - 115.794µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_redirect] - 133.989µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [external_login_user] - 263.559µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [external_login_user] - 246.23µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [protected_branch] - 357.217µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [protected_branch] - 469.802µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [user_open_id] - 355.338µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [user_open_id] - 362.063µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_watch] - 115.949µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_watch] - 149.267µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [commit_status] - 140.334µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [commit_status] - 134.272µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [stopwatch] - 154.184µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [stopwatch] - 563.046µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [tracked_time] - 166.725µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [tracked_time] - 182.345µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [deleted_branch] - 171.853µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [deleted_branch] - 60.682µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_indexer_status] - 169.732µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_indexer_status] - 205.973µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_dependency] - 221.673µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_dependency] - 606.115µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [lfs_lock] - 151.011µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [lfs_lock] - 57.085µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [reaction] - 155.071µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [reaction] - 219.277µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [issue_assignees] - 240.341µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [issue_assignees] - 360.559µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [u2f_registration] - 418.093µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [u2f_registration] - 504.023µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [team_unit] - 350.277µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [team_unit] - 208.792µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [review] - 163.858µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [review] - 133.595µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_application] - 149.512µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_application] - 132.892µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_authorization_code] - 243.677µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_authorization_code] - 252.729µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_grant] - 280.09µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_grant] - 125.665µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [task] - 268.053µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [task] - 102.613µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [language_stat] - 132.66µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [language_stat] - 270.983µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [email_hash] - 170.406µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [email_hash] - 100.784µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [topic] - 264.501µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [topic] - 122.554µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [repo_topic] - 152.787µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [repo_topic] - 137.9µs
+2020/10/19 03:46:23 routers/init.go:133:GlobalInit() [I] ORM engine initialization successful!
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT name FROM sqlite_master WHERE type='table' [] - 286.573µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='table' and name = ? [oauth2_session] - 354.779µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT sql FROM sqlite_master WHERE type='index' and tbl_name = ? [oauth2_session] - 170.148µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `type`, `name`, `is_actived`, `is_sync_enabled`, `cfg`, `created_unix`, `updated_unix` FROM `login_source` WHERE (is_actived = ? and type = ?) [true 6] - 291.206µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] DELETE FROM `deleted_branch` WHERE (deleted_unix < ?) [1602992783] - 3.223567ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Clean-up deleted branches has finished 1603079183] - 30.88592ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `external_id`, `user_id`, `login_source_id`, `raw_data`, `provider`, `email`, `name`, `first_name`, `last_name`, `nick_name`, `description`, `avatar_url`, `location`, `access_token`, `access_token_secret`, `refresh_token`, `expires_at` FROM `external_login_user` WHERE provider=? ORDER BY login_source_id ASC, external_id ASC LIMIT 100 [github] - 31.004183ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `external_id`, `user_id`, `login_source_id`, `raw_data`, `provider`, `email`, `name`, `first_name`, `last_name`, `nick_name`, `description`, `avatar_url`, `location`, `access_token`, `access_token_secret`, `refresh_token`, `expires_at` FROM `external_login_user` WHERE provider=? ORDER BY login_source_id ASC, external_id ASC LIMIT 100 [gitlab] - 71.033µs
+2020/10/19 03:46:23 ...er/issues/indexer.go:142:func2() [I] PID 17: Initializing Issue Indexer: bleve
+2020/10/19 03:46:23 ...er/issues/indexer.go:221:func3() [I] Issue Indexer Initialization took 23.001151ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Update migration poster IDs has finished 1603079183] - 32.139943ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `owner_id`, `owner_name`, `lower_name`, `name`, `description`, `website`, `original_service_type`, `original_url`, `default_branch`, `num_watches`, `num_stars`, `num_forks`, `num_issues`, `num_closed_issues`, `num_pulls`, `num_closed_pulls`, `num_milestones`, `num_closed_milestones`, `is_private`, `is_empty`, `is_archived`, `is_mirror`, `status`, `is_fork`, `fork_id`, `is_template`, `template_id`, `size`, `is_fsck_enabled`, `close_issues_via_commit_in_any_branch`, `topics`, `avatar`, `created_unix`, `updated_unix` FROM `repository` WHERE (id > 0) [] - 80.719692ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_watches!=(SELECT COUNT(*) FROM `watch` WHERE repo_id=repo.id AND mode<>2) [] - 81.759894ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_stars!=(SELECT COUNT(*) FROM `star` WHERE repo_id=repo.id) [] - 79.302µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT label.id FROM `label` WHERE label.num_issues!=(SELECT COUNT(*) FROM `issue_label` WHERE label_id=label.id) [] - 59.235µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `user`.id FROM `user` WHERE `user`.num_repos!=(SELECT COUNT(*) FROM `repository` WHERE owner_id=`user`.id) [] - 75.098µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `issue`.id FROM `issue` WHERE `issue`.num_comments!=(SELECT COUNT(*) FROM `comment` WHERE issue_id=`issue`.id AND type=0) [] - 77.449µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_closed_issues!=(SELECT COUNT(*) FROM `issue` WHERE repo_id=repo.id AND is_closed=? AND is_pull=?) [true false] - 86.11µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_closed_pulls!=(SELECT COUNT(*) FROM `issue` WHERE repo_id=repo.id AND is_closed=? AND is_pull=?) [true true] - 97.387µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT repo.id FROM `repository` repo WHERE repo.num_forks!=(SELECT COUNT(*) FROM `repository` WHERE fork_id=repo.id) [] - 128.697µs
+2020/10/19 03:46:23 ...xer/stats/indexer.go:38:populateRepoIndexer() [I] Populating the repo stats indexer with existing repositories
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Check all repository statistics has finished 1603079183] - 23.726153ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT * FROM `repository`  LIMIT 1 [] - 17.397038ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:277:ExecContext() [I] [SQL] INSERT INTO `notice` (`type`,`description`,`created_unix`) VALUES (?, ?, ?) [2 Cron: Delete old repository archives has finished 1603079183] - 111.955352ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `repo_id`, `hook_id`, `uuid`, `type`, `url`, `signature`, `payload_content`, `http_method`, `content_type`, `event_type`, `is_ssl`, `is_delivered`, `delivered`, `is_succeed`, `request_content`, `response_content` FROM `hook_task` WHERE (is_delivered=?) [false] - 79.112662ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT MAX(id) FROM `repository` LIMIT 1 [] - 75.234247ms
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `repository`.`id` FROM `repository` LEFT OUTER JOIN `repo_indexer_status` ON repository.id = repo_indexer_status.repo_id AND repo_indexer_status.indexer_type = ? WHERE repo_indexer_status.id IS NULL AND repository.is_empty=? AND repository.id<=? ORDER BY `repository`.`id` DESC LIMIT 50 [1 false 1] - 156.001µs
+2020/10/19 03:46:23 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `pull_request`.`id` FROM `pull_request` WHERE (status=?) [1] - 15.036105ms
+2020/10/19 03:46:23 ...xer/stats/indexer.go:84:populateRepoIndexer() [I] Done (re)populating the repo stats indexer with existing repositories
+2020/10/19 03:46:23 routers/init.go:162:GlobalInit() [I] SQLite3 Supported
+2020/10/19 03:46:23 routers/init.go:50:checkRunMode() [I] Run Mode: Production
+2020/10/19 03:46:24 cmd/web.go:161:runWeb() [I] Listen: http://0.0.0.0:3000
+2020/10/19 03:46:24 cmd/web.go:164:runWeb() [I] LFS server enabled
+2020/10/19 03:46:24 ...s/graceful/server.go:55:NewServer() [I] Starting new server: tcp:0.0.0.0:3000 on PID: 17
+2020/10/19 03:46:26 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT `id`, `lower_name`, `name`, `full_name`, `email`, `keep_email_private`, `email_notifications_preference`, `passwd`, `passwd_hash_algo`, `must_change_password`, `login_type`, `login_source`, `login_name`, `type`, `location`, `website`, `rands`, `salt`, `language`, `description`, `created_unix`, `updated_unix`, `last_login_unix`, `last_repo_visibility`, `max_repo_creation`, `is_active`, `is_admin`, `is_restricted`, `allow_git_hook`, `allow_import_local`, `allow_create_organization`, `prohibit_login`, `avatar`, `avatar_email`, `use_custom_avatar`, `num_followers`, `num_following`, `num_stars`, `num_repos`, `num_teams`, `num_members`, `visibility`, `repo_admin_change_team_access`, `diff_view_style`, `theme` FROM `user` WHERE `id`=? LIMIT 1 [1] - 112.838µs
+2020/10/19 03:46:33 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603079181 1603079191 1] - 196.396µs
+2020/10/19 03:46:43 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603079191 1603079201 1] - 210.775µs
+2020/10/19 03:46:53 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603079201 1603079211 1] - 249.868µs
+2020/10/19 03:47:03 ...m.io/xorm/core/db.go:154:QueryContext() [I] [SQL] SELECT user_id, count(*) AS count FROM notification WHERE user_id IN (SELECT user_id FROM notification WHERE updated_unix >= ? AND updated_unix < ?) AND status = ? GROUP BY user_id [1603079211 1603079221 1] - 293.921µs
