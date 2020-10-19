@@ -1,6 +1,6 @@
 [user]
-	name = Gitea
 	email = gitea@fake.local
+	name = Gitea
 [core]
 	quotepath = false
 	commitGraph = true
