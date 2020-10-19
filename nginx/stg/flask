@@ -1,0 +1,22 @@
+upstream backend-stg {
+    server 172.25.11.10:5000;
+}
+
+server {
+
+        listen 80;
+
+        server_name flask.gogolook-stg.com;
+
+        location / {
+                add_header Strict-Transport-Security "max-age=63072000; includeSubdomains";
+                add_header X-Frame-Options "DENY";
+                add_header X-XSS-Protection "1;mode=block";
+                add_header X-Content-Type-Options "nosniff";
+                add_header Content-Security-Policy "script-src 'self'; object-src 'self'";
+                add_header Referrer-Policy "origin-when-cross-origin";
+
+                proxy_pass http://backend-stg;
+        }
+
+}

@@ -8,12 +8,15 @@ services:
       - ./nginx/ci/drone:/etc/nginx/conf.d/drone.conf
       - ./nginx/prod/flask:/etc/nginx/conf.d/flask.conf
       - ./nginx/prod/prometheus:/etc/nginx/conf.d/prometheus.conf
+      - ./nginx/stg/flask:/etc/nginx/conf.d/flask-stg.conf
+      - ./nginx/stg/prometheus:/etc/nginx/conf.d/prometheus-stg.conf
     ports:
       - "80:80"
     restart: always
     networks:
       - ci
       - prod
+      - stg
 
   # CI/CD
   gitea:
@@ -50,7 +53,7 @@ services:
       - DRONE_DATABASE_DATASOURCE=/var/lib/drone/drone.sqlite
       - DRONE_DATABASE_DRIVER=sqlite3
       - TZ=Asia/Taipei
-      - DRONE_RUNNER_NETWORKS=gogolook-task_ci,gogolook-task_prod
+      - DRONE_RUNNER_NETWORKS=gogolook-task_ci,gogolook-task_prod,gogolook-task_stg
     restart: always
     networks:
       - ci
@@ -89,14 +92,36 @@ services:
 
   prometheus-prod:
     image: prom/prometheus:v2.12.0
-    ports:
-      - "9090:9090"
     command:
       --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus-prod.yaml:/etc/prometheus/prometheus.yml
     networks:
       - prod
+  
+  # stg 環境
+  stgdb:
+    image: postgres:9.6
+    container_name: stgdb
+    volumes:
+      - ./.data/stg/db/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=gogolook
+      - POSTGRES_PASSWORD=gogolook
+      - POSTGRES_DB=gogolook
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    restart: always
+    networks:
+      - stg
+
+  prometheus-stg:
+    image: prom/prometheus:v2.12.0
+    command:
+      --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus-stg.yaml:/etc/prometheus/prometheus.yml
+    networks:
+      - stg
 
 networks:
   ci:
